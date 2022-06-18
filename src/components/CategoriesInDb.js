@@ -15,7 +15,6 @@ function CategoriesInDb() {
 
   return (
     <React.Fragment>
-      {/*<!-- Categories in DB -->*/}
       <div className="col-lg-6 mb-4">
         <div className="card shadow mb-4">
           <div className="card-header py-3">
@@ -25,9 +24,9 @@ function CategoriesInDb() {
             <div className="row">
               {countByCategory.map((category, index) => {
                 return <Category
-                  categories={category.name}
-                  amount = {category.amount}
-                  key={index}
+                  categories = { category.name }
+                  amount = { category.amount }
+                  key = { index }
                 />
               })}
             </div>

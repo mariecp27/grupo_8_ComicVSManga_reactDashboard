@@ -35,8 +35,10 @@ function Chart() {
     }
 
     return (
-        /* <!-- DataTales Example --> */
         <div className="card shadow mb-4">
+            <div className="card-header py-3">
+                <h5 className="m-0 font-weight-bold text-gray-800">Listado de Productos</h5>
+            </div>
             <div className="card-body">
                 <div className="table-responsive">
                     <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
@@ -46,6 +48,7 @@ function Chart() {
                                 <th>Título</th>
                                 <th>Descripción</th>
                                 <th>Categorías</th>
+                                <th>Detalle</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -54,6 +57,7 @@ function Chart() {
                                 <th>Título</th>
                                 <th>Descripción</th>
                                 <th>Categorías</th>
+                                <th>Detalle</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -66,8 +70,11 @@ function Chart() {
                                 />
                             }
                             {
-                                products.map((row, i) => {
-                                    return <ChartRow {...row} key={i} />
+                                products.map((row, index) => {
+                                    return <ChartRow
+                                        { ...row }
+                                        key = { index }
+                                    />
                                 })
                             }
 

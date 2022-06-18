@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-// import noPoster from '../assets/images/no-poster.jpg';
-
 function SearchMovies(){
 
 	const [movies, setMovies] = useState([]);

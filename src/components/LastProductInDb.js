@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function LastProductInDb(){
 
@@ -25,7 +26,7 @@ function LastProductInDb(){
                     </div>
                     <h4>{ product.name }</h4>
                     <p>{ product.description }</p>
-                    <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
+                    <Link className="btn btn-danger" to={ `/ProductDetail/${ product.id }` }>Ver detalle del producto</Link>
                 </div>
             </div>
         </div>

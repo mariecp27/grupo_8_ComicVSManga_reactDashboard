@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import SmallCard from './SmallCard';
+import CounterCard from './CounterCard';
 
-function ContentRowMovies(){
+function CounterSection(){
 
     const [productCouter, setproductCouter] = useState(0);
     const [categoryCouter, setCategoryCouter] = useState(0);
@@ -55,7 +55,7 @@ function ContentRowMovies(){
             
             {cartProps.map( (movie, i) => {
 
-                return <SmallCard {...movie} key={i}/>
+                return <CounterCard {...movie} key={i}/>
             
             })}
 
@@ -63,4 +63,4 @@ function ContentRowMovies(){
     )
 }
 
-export default ContentRowMovies;
+export default CounterSection;
