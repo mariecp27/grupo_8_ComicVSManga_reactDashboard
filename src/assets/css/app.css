@@ -12360,3 +12360,24 @@ body.sidebar-toggled footer.sticky-footer {
         width: 20%;
     }
 }
+
+.productForm{
+    display: flex;
+    width: 100%;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.productForm input{
+    margin: 0 5px;
+    width: 80%;
+}
+
+.productForm .btn-info .fa-search{
+    display: inline;
+}
+
+.productForm input::placeholder{
+    font-style: italic;
+}
