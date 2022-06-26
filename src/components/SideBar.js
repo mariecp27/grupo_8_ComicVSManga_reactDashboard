@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import logo from '../assets/images/logoCompleto.png'
 
 function SideBar(){
+	const [enter, setEnter] = useState(false);
+    const [token, setToken] = useState();
+
+	useEffect( () => {
+		setToken(document.cookie.split('; ').find(row => row.startsWith('token=')).split('=')[1]);
+
+		if (token) {
+			fetch('http://localhost:3030/api/users/login', {
+				headers: {
+					'authorization': token
+				}
+			})
+				.then(response => response.json())
+				.then(data => {
+					if(!data.error){
+						setEnter(true);
+					}
+				})
+				.catch(error => console.error(error));
+		}
+    }, [token, enter]);
+
     return(
         <React.Fragment>
             <ul className="navbar-nav sidebar sidebar-dark accordion  sidebarColor" id="accordionSidebar">
@@ -26,34 +48,22 @@ function SideBar(){
 
                 <hr className="sidebar-divider"/>
 
-                <div className="sidebar-heading">Actions</div>
-
-                <li className="nav-item">
-                <Link className="nav-link" to="/GenresInDb">
-                        <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
-                    </Link>
-                </li>
-
-                <li className="nav-item">
-                    <Link className="nav-link" to="/LastMovieInDb">
-                        <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></Link>
-                </li>
+                <div className="sidebar-heading">Acciones</div>
 
                 <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowMovies">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
-                </li>
-
-                <li className="nav-item nav-link">
-                <Link className="nav-link" to="/SearchMovies">
+                <Link className="nav-link" to="/SearchProduct">
                         <i className="fas fa-fw fa-search"></i>
-                        <span>Search movies</span></Link>
+                        <span>Buscar producto</span></Link>
                 </li>
-
+                {enter && 
+                    <li className="nav-item nav-link">
+                    <Link className="nav-link" to="/CreationForm">
+                            <i className="fas fa-fw fa-book"></i>
+                            <span>Crear producto</span></Link>
+                    </li>
+                }
                 <hr className="sidebar-divider d-none d-md-block"/>
+
             </ul>
         </React.Fragment>
     )

@@ -60,7 +60,7 @@ function Chart() {
             })
             .catch(error => console.error(error));
         }
-    }, [keyword]);
+    }, [page, keyword]);
 
     return (
         <div className="card shadow mb-4">

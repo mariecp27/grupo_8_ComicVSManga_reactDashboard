@@ -98,6 +98,10 @@ html {
     cursor: not-allowed;
 }
 
+.user__name{
+    margin-right: 10px;
+}
+
 article,
 aside,
 figcaption,
@@ -4396,7 +4400,7 @@ input[type=submit].btn-block {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: .5rem 1rem
+    padding: .5rem 1rem;
 }
 
 .navbar>.container,
@@ -4427,7 +4431,8 @@ input[type=submit].btn-block {
     flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
-    list-style: none
+    list-style: none;
+    align-items: center;
 }
 
 .navbar-nav .nav-link {
@@ -11537,7 +11542,7 @@ a:focus {
 }
 
 .sidebar-light hr.sidebar-divider {
-    border-top: 1px solid #eaecf4
+    border-top: 1px solid #eaecf4;
 }
 
 .sidebar-light .sidebar-heading {

@@ -1,0 +1,68 @@
+:root {
+    --myTitles: 'Montserrat', sans-serif;
+    --myText: 'Lato', sans-serif;
+    --myYellow: #FECC4F;
+    --myPink: #F11E77;
+    --myBlue: #251854;
+    --myGreen: #94CB91;
+}
+
+.formAdmin__container{
+    margin: 20px auto;
+    flex: auto;
+    max-width: 60%;
+}
+
+.formAdmin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.formAdmin label{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.formAdmin div{
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+.formAdmin input,
+.formAdmin textarea{
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid var(--myBlue);
+    padding: 5px 20px;
+    resize: none;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.formAdmin-upload,
+.formAdmin-formats{
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: 1px solid var(--myBlue);
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 1px;
+    background: var(--myBlue);
+    color: #ffffff;
+}
+
+.formAdmin-categories{
+    display: flex;
+    flex-direction: column;
+}
+
+.formAdmin-categories input{
+    width: auto;
+}

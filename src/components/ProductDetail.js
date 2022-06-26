@@ -16,7 +16,7 @@ function ProductDetail(){
             setCategories(data.categories)
         })
         .catch(error => console.error(error));
-    }, []);
+    }, [params.id]);
 
     return(
         <div className="col-lg-6 mb-4 productDetail__container">
