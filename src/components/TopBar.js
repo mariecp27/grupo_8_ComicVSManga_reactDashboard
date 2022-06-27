@@ -66,8 +66,13 @@ function TopBar() {
 	}
 
 	useEffect( () => {
-		const token = document.cookie.split('; ').find(row => row.startsWith('token=')).split('=')[1]
-		if (token) {
+		let token = '';
+		
+        if(document.cookie){
+			token = document.cookie.split('; ').find(row => row.startsWith('token=')).split('=')[1]
+		}
+
+		if (token !== '') {
 			fetch('http://localhost:3030/api/users/login', {
 				headers: {
 					'authorization': token

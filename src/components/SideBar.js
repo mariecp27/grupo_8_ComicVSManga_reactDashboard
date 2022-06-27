@@ -8,8 +8,9 @@ function SideBar(){
     const [token, setToken] = useState();
 
 	useEffect( () => {
-		setToken(document.cookie.split('; ').find(row => row.startsWith('token=')).split('=')[1]);
-
+        if(document.cookie){
+            setToken(document.cookie.split('; ').find(row => row.startsWith('token=')).split('=')[1]);
+        }
 		if (token) {
 			fetch('http://localhost:3030/api/users/login', {
 				headers: {
