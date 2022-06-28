@@ -58,11 +58,22 @@ input[type="file"]{
     color: #ffffff;
 }
 
-.formAdmin-categories{
+.formAdmin-upload:hover,
+.formAdmin-formats:hover{
+    background-color: var(--myGreen);
+}
+
+.formAdmin-checkBox{
     display: flex;
     flex-direction: column;
 }
 
-.formAdmin-categories input{
+.formAdmin-checkBox input{
     width: auto;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
